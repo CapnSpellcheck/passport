@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+   <data>
+      <variable name="profile" type="com.letstwinkle.passport.Profile" />
+   </data>
+
+   <RelativeLayout
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:background="@{context.resources.getColor(profile.backgroundColor)}"
+      >
+      <!-- There were no requirements for what portions of the profile to display in the list, so
+      I'm only putting the name, to save a bit of time. It would probably make sense to show the
+      age. -->
+      <!-- Quick hack to use selectableItem with the required color background; the real way to
+      do this is to combine selectableItemBackground with the required color into a single
+      background, because the selectable should really be on the parent. -->
+      <TextView
+         android:id="@+id/name"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingStart="@dimen/activity_horizontal_margin"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:minHeight="?android:attr/listPreferredItemHeight"
+         android:textStyle="bold"
+         android:gravity="center_vertical"
+         android:text="@{profile.name}"
+         android:background="?android:attr/selectableItemBackground"
+         tools:text="This is a name"
+         />
+
+   </RelativeLayout>
+</layout>
