@@ -2,7 +2,6 @@ package com.letstwinkle.passport
 
 import android.app.*
 import android.content.DialogInterface
-import android.content.DialogInterface.*
 import android.os.Bundle
 import android.support.annotation.StringRes
 import android.view.View

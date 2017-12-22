@@ -3,16 +3,6 @@
    <dimen name="activity_horizontal_margin">16dp</dimen>
    <dimen name="activity_vertical_margin">16dp</dimen>
    <dimen name="field_top_margin">20dp</dimen>
-   <string-array name="sortMode">
-      <item>Default</item>
-      <item>Age ⬆</item>
-      <item>Age ⬇</item>
-      <item>Name ⬆</item>
-      <item>Name ⬇</item>
-   </string-array>
-   <string-array name="filterMode">
-      <item>All</item>
-      <item>Women</item>
-      <item>Men</item>
-   </string-array>
+
+   <item name="overlayTag" type="id" />
 </resources>

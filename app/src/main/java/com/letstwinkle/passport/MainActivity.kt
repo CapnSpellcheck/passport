@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.*
 import android.widget.AdapterView
 import android.widget.Spinner
-import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.Query
@@ -37,6 +36,7 @@ class MainActivity : Activity() {
         setContentView(R.layout.activity_main)
         recyclerView = findViewById<RecyclerView>(R.id.recycler)
         val sortSpinner = findViewById<Spinner>(R.id.sortSpinner)
+        // post ensures that the listener isn't fired for the initial state
         sortSpinner.post {
             sortSpinner.onItemSelectedListener = sortChangeListener
         }

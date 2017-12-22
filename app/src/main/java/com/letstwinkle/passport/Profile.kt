@@ -4,8 +4,10 @@ import android.content.res.Resources
 import android.databinding.BaseObservable
 import android.databinding.Bindable
 import android.graphics.Bitmap
-import android.support.annotation.*
-import com.google.firebase.database.IgnoreExtraProperties
+import android.support.annotation.ColorRes
+import android.support.annotation.StringRes
+import android.util.Base64
+import com.google.firebase.database.Exclude
 
 // Note that I forewent having a "unique integer ID", which is problematic. Firebase DB ensures
 // that the unique ID is timestamp-driven, so that lexical sorting by 'key' also sorts chronologically.
@@ -15,7 +17,7 @@ class Profile : BaseObservable {
     @get:Bindable var name: String = ""
     @get:Bindable var gender: Gender? = null
     @get:Bindable var hobbies: String = ""
-    var image: Bitmap? = null
+    var imageData: String? = null
 
     // I had created this before I realized that FbDB's id encapsulates the creation time.
 //    var createdAt: Long = 0; private set
@@ -31,10 +33,6 @@ class Profile : BaseObservable {
                 null -> android.R.color.transparent
             }
         }
-
-    fun setCreatedAt() {
-//        createdAt = System.currentTimeMillis()/1000
-    }
 
     enum class Gender(@StringRes val displayStr: Int) : Displayable {
         Male(R.string.male), Female(R.string.female);

@@ -3,7 +3,8 @@ package com.letstwinkle.passport
 import android.content.Context
 import android.databinding.InverseBindingMethod
 import android.databinding.InverseBindingMethods
-import android.support.annotation.*
+import android.support.annotation.LayoutRes
+import android.support.annotation.StringRes
 import android.util.Log
 import android.view.*
 import android.widget.*
